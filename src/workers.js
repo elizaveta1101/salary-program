@@ -3,4 +3,4 @@ const WORKERS = {
     Nastya: "Настя"
 }
 
-export {WORKERS};
+module.exports = WORKERS;

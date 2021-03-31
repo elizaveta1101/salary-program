@@ -48,4 +48,4 @@ const createTable = () => {
     }
 }
 
-export {createTable};
+module.exports = createTable;

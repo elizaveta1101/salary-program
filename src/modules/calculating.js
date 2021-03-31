@@ -1,5 +1,4 @@
-import { CONSTANTS } from './../constants.js';
-import {getTableData} from './getData.js';
+const CONSTANTS = require('./../constants.js');
 
 const calculatePlan = (tickets) => {
     const { PLAN_COEF } = CONSTANTS;
@@ -20,27 +19,6 @@ const calculateBonus = (tickets, weekend) => {
     return bonus;
 }
 
-const calculateSalary = () => {
-    const { RATE } = CONSTANTS;
-    const periodResult = {};
-    const tableData = getTableData();
-    tableData.forEach((dayResult) => {
-        const { workerName } = dayResult;
 
-        if (!periodResult[workerName]) {
-            periodResult[workerName] = {
-                rate: 0,
-                bonus: 0
-            }
-        }
-        periodResult[workerName].rate += RATE;
-        periodResult[workerName].bonus += bonus;
-    });
-    return periodResult;
-}
 
-export {
-    calculateBonus,
-    calculatePlan,
-    calculateSalary
-};
+module.exports = {calculatePlan, calculateBonus };

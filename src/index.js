@@ -4,8 +4,8 @@
 // var blob = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
 // FileSaver.saveAs(blob, "hello world.txt");
 // console.log(FileSaver);
-import {createTable} from './modules/createTable.js';
-import {printSalary} from './modules/printSalary.js';
+const createTable = require('./modules/createTable.js');
+const printSalary = require('./modules/printSalary.js');
 
 const createTableBtn = document.body.querySelector('.tableBtn');
 createTableBtn.addEventListener('click', createTable);

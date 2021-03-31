@@ -8,4 +8,4 @@ const checkDayFilling = (ticketsData) => {
     return filledDay;
 }
 
-export { checkDayFilling }; 
+module.exports = checkDayFilling; 

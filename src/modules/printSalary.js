@@ -1,5 +1,5 @@
-import {WORKERS} from './../workers.js';
-import {calculateSalary} from './calculating.js';
+const WORKERS = require('./../workers.js');
+const calculateSalary = require('./calculateSalary.js');
 
 const printSalary = () => {
     const salaryData = calculateSalary();
@@ -17,4 +17,4 @@ const printSalary = () => {
     resultDiv.innerHTML += `Всего на зарплаты: ${totalSum}`
 }
 
-export { printSalary };
+module.exports = printSalary;

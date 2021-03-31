@@ -1,4 +1,4 @@
-import { CONSTANTS } from './../constants.js';
+const CONSTANTS = require('./../constants.js');
 
 const checkPlanComplete = (plan, weekend) => {
     const { PLAN, WEEKEND_PLAN } = CONSTANTS;
@@ -11,4 +11,4 @@ const checkPlanComplete = (plan, weekend) => {
     }
 }
 
-export { checkPlanComplete };
+module.exports = checkPlanComplete;

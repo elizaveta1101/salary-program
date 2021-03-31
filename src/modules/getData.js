@@ -1,4 +1,7 @@
-import { checkDayFilling } from './checkDayFilling.js';
+const calculatePlan = require('./calculating.js').calculatePlan;
+const calculateBonus = require('./calculating.js').calculateBonus;
+const checkDayFilling = require('./checkDayFilling.js');
+const checkPlanComplete = require('./checkPlanComplete.js');
 
 const getDayData = (rowCells) => {
     const data = {
@@ -78,4 +81,4 @@ const getTableData = () => {
     return tableData;
 }
 
-export { getTableData };
+module.exports = getTableData;
