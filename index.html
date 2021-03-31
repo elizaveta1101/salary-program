@@ -57,7 +57,9 @@
             background: #efefef;
             border: 1px solid darkgrey;
         }
-
+        .btn:hover {
+            cursor: pointer;
+        }
         .btn:focus {
             outline: none;
         }
@@ -67,7 +69,7 @@
 <body>
     <label>c <input type="text" class="fromDate"></label> <!-- onchange="createTable()" -->
     <label>по <input type="text" class="toDate"></label>
-    <button class='tableBtn btn' onclick="createTable()">Сформировать таблицу</button>
+    <button class='tableBtn btn'>Сформировать таблицу</button>
     <br>
     <table class="table">
         <tr class="table__row">
@@ -83,7 +85,7 @@
         </tr>
     </table>
     <br>
-    <button class='calculateBtn btn' onclick="printSalary()">Рассчитать</button>
+    <button class='calculateBtn btn'>Рассчитать</button>
     <br>
     <div class="result"></div>
     <script type="module">
@@ -94,7 +96,7 @@
         // console.log(FileSaver);
     </script>
 
-    <script src="src/index.js"></script>
+    <script type="module" src="src/index.js"></script>
 
 </body>
 
