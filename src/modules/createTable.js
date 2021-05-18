@@ -4,6 +4,19 @@ const createTable = () => {
     try {
         if (from > 0 && to > 0 && from <= to) {
             const salaryTable = document.querySelector('table');
+            salaryTable.innerHTML = `
+            <tr class="table__row">
+                <th class="table__cell">День</th>
+                <th class="table__cell">Имя работника</th>
+                <th class="table__cell">Выходной?</th>
+                <th class="table__cell">10 мин</th>
+                <th class="table__cell">20 мин</th>
+                <th class="table__cell">30 мин</th>
+                <th class="table__cell">60 мин</th>
+                <th class="table__cell">720 мин</th>
+                <th class="table__cell">план</th>
+            </tr>`;
+            
             for (let i = from; i <= to; i++) {
                 salaryTable.innerHTML +=
                     `<tr class="table__row">
@@ -39,7 +52,6 @@ const createTable = () => {
                     </td>
                 </tr>`
             };
-            // inputHighlight();
             return true;
         }
     } catch (error) {
