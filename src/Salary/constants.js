@@ -25,4 +25,9 @@ const CONSTANTS = {
     RATE: 1300
 }
 
-export default CONSTANTS
+const WORKERS = {
+    Dasha: "Даша",
+    Nastya: "Настя"
+}
+
+export {CONSTANTS, WORKERS}

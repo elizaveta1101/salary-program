@@ -1,4 +1,4 @@
-import CONSTANTS from '../constants'
+import {CONSTANTS} from '../constants'
 
 export const calculatePlanHelper = (tickets) => {
     const { PLAN_COEF } = CONSTANTS;

@@ -1,5 +1,5 @@
 import React from 'react'
-import {WORKERS} from '../../WORKERS'
+import {WORKERS} from '../../../constants'
 
 import './WorkerSelection.less'
 

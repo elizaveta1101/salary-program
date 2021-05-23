@@ -1,4 +1,4 @@
-import CONSTANTS from '../constants'
+import {CONSTANTS} from '../constants'
 
 export const checkPlanCompleteHelper = (plan, weekend) => {
     const { PLAN, WEEKEND_PLAN } = CONSTANTS;

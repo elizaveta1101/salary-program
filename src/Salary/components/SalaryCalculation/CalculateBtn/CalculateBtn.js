@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { saveSalaryData, saveTotalSum, saveTableData } from '../../../redux/actions'
+import { saveSalaryData, saveTotalSum, saveTableData, enableModalBtn } from '../../../redux/actions'
 import {calculateSalaryHelper} from '../../../helpers/calculateSalaryHelper'
 import {getTableDataHelper} from '../../../helpers/getTableDataHelper'
 
@@ -19,6 +19,8 @@ export const CalculateBtn = () => {
             totalSum+= salaryData[worker].rate + salaryData[worker].bonus
         }
         dispatch(saveTotalSum(totalSum));
+        
+        dispatch(enableModalBtn());
     }
     return (
         <button 

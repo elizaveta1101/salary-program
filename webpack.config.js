@@ -84,13 +84,11 @@ const plugins = () => {
     return base
 }
 
-console.log('IsDev: ', isDev)
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        main: ['@babel/polyfill','@/index.js'],
-        // main: 'index.html',
+        main: ['@babel/polyfill','@/index.js']
     },
     output: {
         filename: filename('js'),
@@ -127,27 +125,6 @@ module.exports = {
                 test: /\.(png|jpg|svg|gif|ttf|woff|woff2|eot)$/,
                 use: ['file-loader']
             },
-            // {
-            //     test: /\.xml$/,
-            //     use: ['xml-loader']
-            // },
-            // {
-            //     test: /\.csv$/,
-            //     use: ['csv-loader']
-            // },
-            // {
-            //     test: /\.js$/,
-            //     // exclude: /node_modules/,
-            //     use: jsLoaders()
-            // },
-            // {
-            //     test: /\.ts$/,
-            //     exclude: /node_modules/,
-            //     use: {
-            //         loader: 'babel-loader',
-            //         options: babelOptions('@babel/preset-typescript') 
-            //     }
-            // }, 
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,

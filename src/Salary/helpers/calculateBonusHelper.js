@@ -1,4 +1,4 @@
-import CONSTANTS from '../constants'
+import {CONSTANTS} from '../constants'
 
 export const calculateBonusHelper = (tickets, weekend) => {
     const COEF = weekend ? CONSTANTS.WEEKEND_BONUS : CONSTANTS.BONUS;
