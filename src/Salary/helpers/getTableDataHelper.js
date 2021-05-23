@@ -23,7 +23,7 @@ const getDayDataHelper = (rowCells) => {
     rowCells.forEach((cell, i) => {
         switch (i) {
             case 0:
-                data.date = cell.querySelector('input').value;
+                data.date = Number(cell.querySelector('input').value);
                 break;
             case 1:
                 data.workerName = cell.querySelector('select').value;
@@ -32,19 +32,19 @@ const getDayDataHelper = (rowCells) => {
                 data.weekend = cell.querySelector('input').checked;
                 break;
             case 3:
-                data.tickets["10"] = cell.querySelector('input').value;
+                data.tickets["10"] = Number(cell.querySelector('input').value);
                 break;
             case 4:
-                data.tickets["20"] = cell.querySelector('input').value;
+                data.tickets["20"] = Number(cell.querySelector('input').value);
                 break;
             case 5:
-                data.tickets["30"] = cell.querySelector('input').value;
+                data.tickets["30"] = Number(cell.querySelector('input').value);
                 break;
             case 6:
-                data.tickets["60"] = cell.querySelector('input').value;
+                data.tickets["60"] = Number(cell.querySelector('input').value);
                 break;
             case 7:
-                data.tickets["720"] = cell.querySelector('input').value;
+                data.tickets["720"] = Number(cell.querySelector('input').value);
                 break;
         }
     });

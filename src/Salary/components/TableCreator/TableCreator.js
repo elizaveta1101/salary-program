@@ -6,8 +6,8 @@ import './TableCreator.less'
 
 export const TableCreator = () => {
     const dispatch = useDispatch()
-    const tableState = useSelector(state => state.table)
-    const [dates, setDates] = useState(tableState);
+    const tableDates = useSelector(state => state.table.date)
+    const [dates, setDates] = useState(tableDates);
     const changeInputHandler = event => {
         event.persist()
         setDates( prev => ({...prev, ...{

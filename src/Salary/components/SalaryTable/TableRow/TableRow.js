@@ -5,6 +5,11 @@ export const TableRow = ({rowNumber}) =>  {
     const onfocusHandlerEvent = (event) => {
         event.target.select();
     }
+    // const cancelTabHandlerEvent = (e) => {
+    //     if (e.which == 9) {
+    //         e.preventDefault();
+    //     }
+    // }
     return (
         <tr className="table__row">
             <td className="table__cell">

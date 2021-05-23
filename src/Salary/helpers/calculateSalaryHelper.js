@@ -1,10 +1,8 @@
 import CONSTANTS from '../constants'
-import {getTableDataHelper} from '../helpers/getTableDataHelper'
 
-export const calculateSalaryHelper = () => {
+export const calculateSalaryHelper = (tableData) => {
     const { RATE } = CONSTANTS;
     const periodResult = {};
-    const tableData = getTableDataHelper();
     tableData.forEach((dayResult) => {
         const { workerName, bonus } = dayResult;
 

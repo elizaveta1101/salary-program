@@ -1,6 +1,12 @@
-import { CHANGE_DATES, SAVE_SALARY_DATA, SAVE_TOTAL_SUM } from "./types";
+import { CHANGE_DATES, SAVE_SALARY_DATA, SAVE_TABLE_DATA, SAVE_TOTAL_SUM } from "./types";
 
 
+export function saveTableData(tableData) {
+    return {
+        type: SAVE_TABLE_DATA,
+        payload: tableData
+    }
+}
 export function saveSalaryData(salaryData) {
     return {
         type: SAVE_SALARY_DATA,

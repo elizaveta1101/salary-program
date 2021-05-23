@@ -7,7 +7,7 @@ import './SalaryTable.less'
 
 export const SalaryTable = () => {
     
-    const {fromDate, toDate} = useSelector(state => state.table)
+    const {fromDate, toDate} = useSelector(state => state.table.date)
     let rows = [];         
     try {
         if (fromDate > 0 && toDate > 0 && fromDate <= toDate) {    

@@ -1,14 +1,19 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { saveSalaryData, saveTotalSum } from '../../../redux/actions'
+import { saveSalaryData, saveTotalSum, saveTableData } from '../../../redux/actions'
 import {calculateSalaryHelper} from '../../../helpers/calculateSalaryHelper'
+import {getTableDataHelper} from '../../../helpers/getTableDataHelper'
 
 export const CalculateBtn = () => {
     const dispatch = useDispatch()
 
     const onclickHandlerEvent = () => {
-        const salaryData = calculateSalaryHelper();
+        const tableData = getTableDataHelper();
+        dispatch(saveTableData(tableData));
+
+        const salaryData = calculateSalaryHelper(tableData);
         dispatch(saveSalaryData(salaryData));
+        
         let totalSum = 0;
         for (let worker in salaryData) {            
             totalSum+= salaryData[worker].rate + salaryData[worker].bonus
