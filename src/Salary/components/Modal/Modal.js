@@ -9,6 +9,7 @@ import './Modal.less'
 
 export const Modal = () => {
     const dispatch = useDispatch();
+    const {fromDate, toDate} = useSelector(state => state.table.date);
     const tableData = useSelector(state => state.table.data);
     const salaryData = useSelector(state => state.salary);
     const {year, month} = useSelector(state => state.date);
@@ -25,7 +26,7 @@ export const Modal = () => {
         text +=salaryDataToTextHelper(salaryData);
     
         let blob = new Blob([text], {type: "text/plain;charset=utf-8"});
-        saveAs(blob, `Зарплата ${month}-${year}.txt`);
+        saveAs(blob, `Зарплата ${fromDate}-${toDate}.${month}.${year} .txt`);
         
         dispatch(hideSaveModal());
     }
