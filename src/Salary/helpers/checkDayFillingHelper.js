@@ -1,4 +1,4 @@
-const checkDayFilling = (ticketsData) => {
+export const checkDayFillingHelper = (ticketsData) => {
     let filledDay = false;
     for (const ticket in ticketsData) {
         if (ticketsData[ticket] !== "") {
@@ -7,5 +7,3 @@ const checkDayFilling = (ticketsData) => {
     }
     return filledDay;
 }
-
-module.exports = checkDayFilling; 

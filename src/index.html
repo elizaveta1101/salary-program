@@ -5,91 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Зарплата</title>
-    <style type="text/css">
-        .table {
-            width: 800px;
-            margin: 20px 0;
-            border: 1px solid #dddddd;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        .table th {
-            font-weight: bold;
-            padding: 5px;
-            background: #efefef;
-        }
-
-        .table__cell {
-            border: 1px solid #dddddd;
-            align-content: center;
-        }
-
-        .table__cell input,
-        .table__cell select {
-            width: 100%;
-            margin: 0;
-            border: none;
-            padding: 5px;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        .table__cell input:focus,
-        .table__cell select:focus {
-            outline: none;
-            border: 1px solid darkgrey;
-        }
-
-        .fromDate,
-        .toDate {
-            padding: 5px;
-            border: 1px solid #dddddd;
-        }
-
-        .fromDate:focus,
-        .toDate:focus {
-            outline: none;
-        }
-
-        .btn {
-            padding: 5px 15px;
-            background: #efefef;
-            border: 1px solid darkgrey;
-        }
-        .btn:hover {
-            cursor: pointer;
-        }
-        .btn:focus {
-            outline: none;
-        }
-    </style>
 </head>
 
 <body>
-    <label>c <input type="text" class="fromDate"></label> <!-- onchange="createTable()" -->
-    <label>по <input type="text" class="toDate"></label>
-    <button class='tableBtn btn'>Сформировать таблицу</button>
-    <br>
-    <table class="table">
-        
-    </table>
-    <br>
-    <button class='calculateBtn btn'>Рассчитать</button>
-    <br>
-    <div class="result"></div>
-    <script type="module">
-        import { saveAs } from './FileSaver.js';
-        var blob = new Blob(["Hello, world!"], { type: "text/plain;charset=utf-8" });
-        // FileSaver.saveAs(blob, "hello world.txt");
-        // saveAs(blob, "hello world.txt");
-        // console.log(FileSaver);
-    </script>
-
-    <!-- <script  src="dist/bundle.js"></script> -->
-    <!-- <script  src="main.js"></script> -->
-    <!-- <script  src="src/index.js"></script> -->
-
+    <div id="root"></div>
 </body>
 
 </html>

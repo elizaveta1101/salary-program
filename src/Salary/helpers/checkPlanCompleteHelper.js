@@ -1,6 +1,6 @@
-const CONSTANTS = require('./../constants.js');
+import CONSTANTS from '../constants'
 
-const checkPlanComplete = (plan, weekend) => {
+export const checkPlanCompleteHelper = (plan, weekend) => {
     const { PLAN, WEEKEND_PLAN } = CONSTANTS;
     if (weekend && plan >= WEEKEND_PLAN) {
         return true;
@@ -10,5 +10,3 @@ const checkPlanComplete = (plan, weekend) => {
         return false;
     }
 }
-
-module.exports = checkPlanComplete;

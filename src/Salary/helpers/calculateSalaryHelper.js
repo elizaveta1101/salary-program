@@ -1,10 +1,10 @@
-const CONSTANTS = require('./../constants.js');
-const getTableData = require('./getData.js');
+import CONSTANTS from '../constants'
+import {getTableDataHelper} from '../helpers/getTableDataHelper'
 
-const calculateSalary = () => {
+export const calculateSalaryHelper = () => {
     const { RATE } = CONSTANTS;
     const periodResult = {};
-    const tableData = getTableData();
+    const tableData = getTableDataHelper();
     tableData.forEach((dayResult) => {
         const { workerName, bonus } = dayResult;
 
@@ -19,5 +19,3 @@ const calculateSalary = () => {
     });
     return periodResult;
 }
-
-module.exports = calculateSalary;

@@ -1,14 +1,16 @@
-const {calculatePlan, calculateBonus, calculateSalary} = require('./../modules/calculating.js');
+import {calculateSalaryHelper} from '../helpers/calculateSalaryHelper'; 
+import {calculatePlanHelper} from '../helpers/calculatePlanHelper'; 
+import {calculateBonusHelper} from '../helpers/calculateBonusHelper'; 
 
 test('Подсчет плана при билетах: 10 - 5, 20 - 8, 30 - 9, 60 - 4, 720 - 0', () => {
-    expect(calculatePlan({
+    expect(calculatePlanHelper({
         10: 5,
         20: 8,
         30: 9,
         60: 4,
         720: 0
     })).toBe(60.5);
-    expect(calculatePlan({
+    expect(calculatePlanHelper({
         10: 5,
         20: 8,
         30: 9,

@@ -25,4 +25,4 @@ const CONSTANTS = {
     RATE: 1300
 }
 
-module.exports = CONSTANTS;
+export default CONSTANTS

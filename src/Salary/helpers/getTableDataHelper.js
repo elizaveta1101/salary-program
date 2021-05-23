@@ -1,9 +1,9 @@
-const calculatePlan = require('./calculating.js').calculatePlan;
-const calculateBonus = require('./calculating.js').calculateBonus;
-const checkDayFilling = require('./checkDayFilling.js');
-const checkPlanComplete = require('./checkPlanComplete.js');
+import {calculatePlanHelper} from './calculatePlanHelper'
+import {calculateBonusHelper} from './calculateBonusHelper'
+import {checkDayFillingHelper} from './checkDayFillingHelper'
+import {checkPlanCompleteHelper} from './checkPlanCompleteHelper'
 
-const getDayData = (rowCells) => {
+const getDayDataHelper = (rowCells) => {
     const data = {
         date: '',
         workerName: "",
@@ -51,24 +51,24 @@ const getDayData = (rowCells) => {
     return data;
 }
 
-const getTableData = () => {
+export const getTableDataHelper = () => {
     let tableData = []; //в нем будем хранить объекты с данными по дням
     const table_rows = document.querySelectorAll('.table__row');
     table_rows.forEach(row => {
         let cells = row.querySelectorAll('td');
         if (cells.length > 0) {
-            const dayResult = getDayData(cells);
+            const dayResult = getDayDataHelper(cells);
 
             let { weekend, tickets } = dayResult;
 
-            if (checkDayFilling(tickets)) {
-                dayResult.plan = calculatePlan(tickets);
+            if (checkDayFillingHelper(tickets)) {
+                dayResult.plan = calculatePlanHelper(tickets);
                 const planCell = cells[8].querySelector('input');
                 planCell.value = dayResult.plan;
 
-                dayResult.planComplete = checkPlanComplete(dayResult.plan, weekend);
+                dayResult.planComplete = checkPlanCompleteHelper(dayResult.plan, weekend);
                 if (dayResult.planComplete) {
-                    dayResult.bonus = calculateBonus(tickets, weekend);
+                    dayResult.bonus = calculateBonusHelper(tickets, weekend);
                     planCell.style.backgroundColor = '#b6ff88';
                 } else {
                     planCell.style.backgroundColor = '#ff8888';
@@ -77,8 +77,5 @@ const getTableData = () => {
             }
         }
     });
-    console.log(tableData);
     return tableData;
 }
-
-module.exports = getTableData;

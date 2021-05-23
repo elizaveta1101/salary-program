@@ -1,22 +1,46 @@
-// import {saveAs} from 'file-saver';
+// // import {saveAs} from 'file-saver';
 
-// var FileSaver = require('file-saver');
-// var blob = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
-// FileSaver.saveAs(blob, "hello world.txt");
-// console.log(FileSaver);
-const createTable = require('./modules/createTable.js');
-const printSalary = require('./modules/printSalary.js');
+// // var FileSaver = require('file-saver');
+// // var blob = new Blob(["Hello, world!"], {type: "text/plain;charset=utf-8"});
+// // FileSaver.saveAs(blob, "hello world.txt");
+// // console.log(FileSaver);
 
-const createTableBtn = document.body.querySelector('.tableBtn');
-createTableBtn.addEventListener('click', createTable);
+import React from 'react';
+import { render } from 'react-dom';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux'
+// import createSagaMiddleware from 'redux-saga'
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk'
+import App from './App';
+// import reportWebVitals from './reportWebVitals';
+import { rootReducer } from './Salary/redux/rootReducer';
+// import { sagaWatcher } from './redux/sagas';
 
-const calculateBtn = document.body.querySelector('.calculateBtn');
-calculateBtn.addEventListener('click',printSalary);
+// const saga = createSagaMiddleware()
 
-// const inputHighlight = () => {
-//     const inputFields = document.querySelectorAll('.table input[type=text]');
-//     inputFields.forEach(field => {
-//         field.onfocus = function () { this.select(); }
-//     });
-// }
+import './Salary/styles/styles.less'
 
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(
+    applyMiddleware(thunk) //, saga
+  )
+)
+
+// saga.run(sagaWatcher)
+
+const app = () => (
+  <Provider store={store}>
+    <App />
+  </Provider>
+)
+
+render(
+  <React.StrictMode>
+    {app()}
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+// reportWebVitals();

@@ -89,7 +89,7 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        main: '@/index.js', //['@babel/polyfill', 
+        main: ['@babel/polyfill','@/index.js'],
         // main: 'index.html',
     },
     output: {
@@ -99,7 +99,6 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.json', '.png'],
         alias: {
-            // '@models': path.resolve(__dirname, 'src/models'),
             '@': path.resolve(__dirname, 'src'),
         }
     },
@@ -124,33 +123,33 @@ module.exports = {
                 test: /\.s[ac]ss$/,
                 use:  cssLoaders('sass-loader')
             },
-            { //images
+            {
                 test: /\.(png|jpg|svg|gif|ttf|woff|woff2|eot)$/,
                 use: ['file-loader']
             },
+            // {
+            //     test: /\.xml$/,
+            //     use: ['xml-loader']
+            // },
+            // {
+            //     test: /\.csv$/,
+            //     use: ['csv-loader']
+            // },
+            // {
+            //     test: /\.js$/,
+            //     // exclude: /node_modules/,
+            //     use: jsLoaders()
+            // },
+            // {
+            //     test: /\.ts$/,
+            //     exclude: /node_modules/,
+            //     use: {
+            //         loader: 'babel-loader',
+            //         options: babelOptions('@babel/preset-typescript') 
+            //     }
+            // }, 
             {
-                test: /\.xml$/,
-                use: ['xml-loader']
-            },
-            {
-                test: /\.csv$/,
-                use: ['csv-loader']
-            },
-            {
-                test: /\.js$/,
-                exclude: /node_modules/,
-                use: jsLoaders()
-            },
-            {
-                test: /\.ts$/,
-                exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: babelOptions('@babel/preset-typescript') 
-                }
-            }, 
-            {
-                test: /\.jsx$/,
+                test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
