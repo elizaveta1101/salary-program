@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { saveSalaryData, saveTotalSum, saveTableData, enableModalBtn } from '../../../redux/actions'
-import { calculateSalaryHelper } from '../../../helpers/calculateSalaryHelper'
-import { getTableDataHelper } from '../../../helpers/getTableDataHelper'
+import { calculateSalaryHelper } from '../../../helpers/calculate-salary-helper'
+import { getTableDataHelper } from '../../../helpers/get-table-data-helper'
 
 import './style.less'
 

@@ -2,8 +2,8 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { hideSaveModal, saveDate } from '../../redux/actions';
 import {saveAs} from 'file-saver';
-import { tableDataToTextHelper } from '../../helpers/tableDataToTextHelper';
-import { salaryDataToTextHelper } from '../../helpers/salaryDataToTextHelper';
+import { tableDataToTextHelper } from '../../helpers/table-data-to-text-helper';
+import { salaryDataToTextHelper } from '../../helpers/salary-data-to-text-helper';
 
 import './style.less'
 

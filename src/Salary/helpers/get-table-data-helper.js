@@ -1,7 +1,7 @@
-import {calculatePlanHelper} from './calculatePlanHelper'
-import {calculateBonusHelper} from './calculateBonusHelper'
-import {checkDayFillingHelper} from './checkDayFillingHelper'
-import {checkPlanCompleteHelper} from './checkPlanCompleteHelper'
+import {calculatePlanHelper} from './calculate-plan-helper'
+import {calculateBonusHelper} from './calculate-bonus-helper'
+import {checkDayFillingHelper} from './check-day-filling-helper'
+import {checkPlanCompleteHelper} from './check-plan-complete-helper'
 
 const getDayDataHelper = (rowCells) => {
     const data = {
