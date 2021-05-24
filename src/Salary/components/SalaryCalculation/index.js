@@ -1,10 +1,10 @@
 import React from 'react'
-import { CalculatedSalary } from './CalculatedSalary/CalculatedSalary'
-import { CalculateBtn } from './CalculateBtn/CalculateBtn'
+import { CalculatedSalary } from './CalculatedSalary'
+import { CalculateBtn } from './CalculateBtn'
 import { useSelector } from 'react-redux'
+import { SaveBtn } from './SaveBtn'
 
-import './TotalSalary.less'
-import { SaveBtn } from './SaveBtn/SaveBtn'
+import './style.less'
 
 export const SalaryCalculation = () => {
     const salaryData = useSelector(state => state.salary.data);

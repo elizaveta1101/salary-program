@@ -5,7 +5,7 @@ import {saveAs} from 'file-saver';
 import { tableDataToTextHelper } from '../../helpers/tableDataToTextHelper';
 import { salaryDataToTextHelper } from '../../helpers/salaryDataToTextHelper';
 
-import './Modal.less'
+import './style.less'
 
 export const Modal = () => {
     const dispatch = useDispatch();

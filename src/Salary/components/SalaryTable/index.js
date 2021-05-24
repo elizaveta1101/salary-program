@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import {TableHeader} from './TableHeader/TableHeader'
-import {TableRow} from './TableRow/TableRow'
+import {TableHeader} from './TableHeader'
+import {TableRow} from './TableRow'
 
-import './SalaryTable.less'
+import './style.less'
 
 export const SalaryTable = () => {
     

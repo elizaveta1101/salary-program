@@ -1,6 +1,6 @@
 import React from 'react'
 
-import './WorkerSalary.less'
+import './style.less'
 
 export const WorkerSalary = ({name, rate, bonus}) => {
     return (

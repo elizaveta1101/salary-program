@@ -1,6 +1,6 @@
 import React from 'react'
 import {WORKERS} from '../../../constants'
-import { WorkerSalary } from './WorkerSalary/WorkerSalary'
+import { WorkerSalary } from './WorkerSalary'
 
 export const CalculatedSalary = ({salaryData}) => {
 

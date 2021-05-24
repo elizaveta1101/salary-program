@@ -2,7 +2,7 @@ import React , {useState} from 'react'
 import { changeDates } from '../../redux/actions'
 import { useDispatch, useSelector } from 'react-redux'
 
-import './TableCreator.less'
+import './style.less'
 
 export const TableCreator = () => {
     const dispatch = useDispatch()
