@@ -27,7 +27,8 @@ const CONSTANTS = {
 
 const WORKERS = {
     Dasha: "Даша",
-    Nastya: "Настя"
+    Nastya: "Настя",
+    Oleg: "Олег",
 }
 
 export {CONSTANTS, WORKERS}
