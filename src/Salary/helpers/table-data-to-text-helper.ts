@@ -18,8 +18,12 @@
 //
 
 import {WORKERS} from '../constants'
+import {TDayData} from "../ducks/table/types";
+import {TSaveDateState} from "../ducks/date/reducer";
 
-export const tableDataToTextHelper = (data, month, year) => {
+export const tableDataToTextHelper = (data: TDayData, tableDate: TSaveDateState) => {
+
+    const {month, year} = tableDate;
 
     const {date, workerName, weekend, tickets, plan, planComplete, bonus} = data;
     return (

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import {showSaveModal } from '../../../redux/actions'
+import {showSaveModal} from "@/Salary/ducks/modal/actions.ts";
 
 export const SaveBtn = () => {
     const dispatch = useDispatch()

@@ -6,8 +6,9 @@
 // }
 
 import {WORKERS} from '../constants'
+import {TSalaryState} from "../ducks/salary/reducer";
 
-export const salaryDataToTextHelper = (salary) => {
+export const salaryDataToTextHelper = (salary: TSalaryState) => {
 
     let text = '';
     Object.entries(WORKERS).forEach(([person, name]) => {

@@ -2,10 +2,11 @@ import {calculatePlanHelper} from './calculate-plan-helper'
 import {calculateBonusHelper} from './calculate-bonus-helper'
 import {checkDayFillingHelper} from './check-day-filling-helper'
 import {checkPlanCompleteHelper} from './check-plan-complete-helper'
+import {TDayData} from "../ducks/table/types";
 
-const getDayDataHelper = (rowCells) => {
-    const data = {
-        date: '',
+const getDayDataHelper = (rowCells: NodeListOf<HTMLTableCellElement>): TDayData => {
+    const data: TDayData = {
+        date: 0,
         workerName: "",
         weekend: false,
         tickets: {
@@ -52,7 +53,7 @@ const getDayDataHelper = (rowCells) => {
 }
 
 export const getTableDataHelper = () => {
-    let tableData = []; //в нем будем хранить объекты с данными по дням
+    let tableData: TDayData[] = []; //в нем будем хранить объекты с данными по дням
     const table_rows = document.querySelectorAll('.table__row');
     table_rows.forEach(row => {
         let cells = row.querySelectorAll('td');
@@ -64,7 +65,7 @@ export const getTableDataHelper = () => {
             if (checkDayFillingHelper(tickets)) {
                 dayResult.plan = calculatePlanHelper(tickets);
                 const planCell = cells[8].querySelector('input');
-                planCell.value = dayResult.plan;
+                planCell.value = String(dayResult.plan);
 
                 dayResult.planComplete = checkPlanCompleteHelper(dayResult.plan, weekend);
                 if (dayResult.planComplete) {

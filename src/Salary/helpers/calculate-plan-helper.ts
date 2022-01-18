@@ -1,6 +1,7 @@
 import {CONSTANTS} from '../constants'
+import {TTickets} from "../ducks/table/types";
 
-export const calculatePlanHelper = (tickets) => {
+export const calculatePlanHelper = (tickets: TTickets): number => {
     const { PLAN_COEF } = CONSTANTS;
     let dayPlan = 0;
     for (const ticket in tickets) {

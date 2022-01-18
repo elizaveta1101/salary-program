@@ -1,10 +1,12 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { saveSalaryData, saveTotalSum, saveTableData, enableModalBtn } from '../../../redux/actions'
-import { calculateSalaryHelper } from '../../../helpers/calculate-salary-helper'
-import { getTableDataHelper } from '../../../helpers/get-table-data-helper'
+import { calculateSalaryHelper } from '../../../helpers/calculate-salary-helper.ts'
+import { getTableDataHelper } from '../../../helpers/get-table-data-helper.ts'
 
 import './style.less'
+import {saveTableData} from "@/Salary/ducks/table/actions.ts";
+import {saveSalaryData, saveTotalSum} from "@/Salary/ducks/salary/actions.ts";
+import {enableModalBtn} from "@/Salary/ducks/modal/actions.ts";
 
 export const CalculateBtn = () => {
     const dispatch = useDispatch()

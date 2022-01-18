@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "pretty": true,
+    "target": "es2019",
+    "module": "es2020",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "baseUrl": ".",
+    "lib": ["es2020", "dom", "esnext"],
+    "paths": {
+      "src": ["src/*"]
+    },
+    "resolveJsonModule": true,
+    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "skipLibCheck": true,
+    "allowJs": true,
+    "noEmit": true
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "build", "dist", "public", "webpack", "jest", "examples"]
+}

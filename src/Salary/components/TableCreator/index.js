@@ -1,8 +1,8 @@
 import React , {useState} from 'react'
-import { changeDates } from '../../redux/actions'
 import { useDispatch, useSelector } from 'react-redux'
 
 import './style.less'
+import {changeDates} from "@/Salary/ducks/table/actions.ts";
 
 export const TableCreator = () => {
     const dispatch = useDispatch()

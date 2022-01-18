@@ -1,8 +1,10 @@
 import {CONSTANTS} from '../constants'
+import {TTableData} from "../ducks/table/reducer";
+import {TSalaryData} from "../ducks/salary/types";
 
-export const calculateSalaryHelper = (tableData) => {
+export const calculateSalaryHelper = (tableData: TTableData): TSalaryData => {
     const { RATE } = CONSTANTS;
-    const periodResult = {};
+    const periodResult = <TSalaryData>{};
     tableData.forEach((dayResult) => {
         const { workerName, bonus } = dayResult;
 

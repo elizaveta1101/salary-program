@@ -95,7 +95,7 @@ module.exports = {
         path: path.resolve(__dirname, 'docs')
     },
     resolve: {
-        extensions: ['.js', '.json', '.png'],
+        extensions: ['.js', '.ts', '.tsx', '.json', '.png'],
         alias: {
             '@': path.resolve(__dirname, 'src'),
         }
@@ -126,7 +126,7 @@ module.exports = {
                 use: ['file-loader']
             },
             {
-                test: /\.(js|jsx)$/,
+                test: /\.(js|jsx|ts|tsx)$/,
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',

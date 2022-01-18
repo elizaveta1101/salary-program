@@ -1,6 +1,6 @@
-import {calculateSalaryHelper} from '../helpers/calculate-salary-helper'; 
-import {calculatePlanHelper} from '../helpers/calculate-plan-helper'; 
-import {calculateBonusHelper} from '../helpers/calculate-bonus-helper'; 
+import {calculateSalaryHelper} from '../helpers/calculate-salary-helper.ts';
+import {calculatePlanHelper} from '../helpers/calculate-plan-helper.ts';
+import {calculateBonusHelper} from '../helpers/calculate-bonus-helper.ts';
 
 test('Подсчет плана при билетах: 10 - 5, 20 - 8, 30 - 9, 60 - 4, 720 - 0', () => {
     expect(calculatePlanHelper({
