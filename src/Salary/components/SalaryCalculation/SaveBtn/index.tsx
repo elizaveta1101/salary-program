@@ -1,10 +1,11 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import {showSaveModal} from "@/Salary/ducks/modal/actions.ts";
+import { useDispatch } from 'react-redux'
+import {showSaveModal} from "salary/ducks/modal/actions";
+import {getModalBtnDisable} from "salary/ducks/modal/selectors";
 
-export const SaveBtn = () => {
+export const SaveBtn: React.FC = () => {
     const dispatch = useDispatch()
-    const saveBtnDisable = useSelector(state => state.modal.btnDisable);
+    const saveBtnDisable = getModalBtnDisable();
 
     const onclickHandlerEvent = () => {
         dispatch(showSaveModal());

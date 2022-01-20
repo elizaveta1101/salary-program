@@ -1,14 +1,15 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { calculateSalaryHelper } from '../../../helpers/calculate-salary-helper.ts'
-import { getTableDataHelper } from '../../../helpers/get-table-data-helper.ts'
+import {saveTableData} from "salary/ducks/table/actions";
+import {saveSalaryData, saveTotalSum} from "salary/ducks/salary/actions";
+import {enableModalBtn} from "salary/ducks/modal/actions";
+import { calculateSalaryHelper } from 'salary/helpers/calculate-salary-helper'
+import { getTableDataHelper } from 'salary/helpers/get-table-data-helper'
 
 import './style.less'
-import {saveTableData} from "@/Salary/ducks/table/actions.ts";
-import {saveSalaryData, saveTotalSum} from "@/Salary/ducks/salary/actions.ts";
-import {enableModalBtn} from "@/Salary/ducks/modal/actions.ts";
 
-export const CalculateBtn = () => {
+
+export const CalculateBtn: React.FC = () => {
     const dispatch = useDispatch()
 
     const onclickHandlerEvent = () => {

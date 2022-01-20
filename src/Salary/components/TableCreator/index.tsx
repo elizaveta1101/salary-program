@@ -1,12 +1,13 @@
 import React , {useState} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import {changeDates} from "salary/ducks/table/actions";
 
 import './style.less'
-import {changeDates} from "@/Salary/ducks/table/actions.ts";
+import {getTableDate} from "../../ducks/table/selectors";
 
-export const TableCreator = () => {
+export const TableCreator: React.FC = () => {
     const dispatch = useDispatch()
-    const tableDates = useSelector(state => state.table.date)
+    const tableDates = getTableDate()
     const [dates, setDates] = useState(tableDates);
     const changeInputHandler = event => {
         event.persist()

@@ -1,6 +1,6 @@
 import React from 'react'
 
-export const TableHeader = () => (
+export const TableHeader: React.FC = () => (
     <tr className="table__row">
         <th className="table__cell">День</th>
         <th className="table__cell">Имя работника</th>

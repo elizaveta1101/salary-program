@@ -1,4 +1,4 @@
-import {useSelector} from "../useSelector";
+import {useTypedSelector} from "../useTypedSelector";
 
-export const getTableDate = useSelector(state => state.table.date);
-export const getTableData= useSelector(state => state.table.data);
+export const getTableDate = () => useTypedSelector(state => state.table.date);
+export const getTableData= () => useTypedSelector(state => state.table.data);

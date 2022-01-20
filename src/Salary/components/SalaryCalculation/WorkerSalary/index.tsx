@@ -2,7 +2,13 @@ import React from 'react'
 
 import './style.less'
 
-export const WorkerSalary = ({name, rate, bonus}) => {
+type TWorkerSalary = {
+    name: string,
+    rate: number,
+    bonus: number
+}
+
+export const WorkerSalary: React.FC<TWorkerSalary> = ({name, rate, bonus}) => {
     return (
         <div className='workerCard card'>
             <div className='card__name'>{name}</div> 

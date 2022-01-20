@@ -1,3 +1,3 @@
-import {useSelector} from "../useSelector";
+import {useTypedSelector} from "../useTypedSelector";
 
-export const getDate = useSelector(state => state.date);
+export const getDate = () => useTypedSelector(state => state.date);

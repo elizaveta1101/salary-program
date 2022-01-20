@@ -2,24 +2,24 @@ import * as React from "react";
 import {useDispatch} from 'react-redux'
 import {saveAs} from 'file-saver';
 
-import {tableDataToTextHelper} from '../../helpers/table-data-to-text-helper';
-import {salaryDataToTextHelper} from '../../helpers/salary-data-to-text-helper';
+import {tableDataToTextHelper} from 'salary/helpers/table-data-to-text-helper';
+import {salaryDataToTextHelper} from 'salary/helpers/salary-data-to-text-helper';
 
-import {saveDate} from "../../ducks/date/actions";
-import {hideSaveModal} from "../../ducks/modal/actions";
+import {saveDate} from "salary/ducks/date/actions";
+import {hideSaveModal} from "salary/ducks/modal/actions";
 
-import {getDate} from "../../ducks/date/selectors";
-import {getTableData, getTableDate} from "../../ducks/table/selectors";
-import {getSalaryData} from "../../ducks/salary/selectors";
+import {getDate} from "salary/ducks/date/selectors";
+import {getTableData, getTableDate} from "salary/ducks/table/selectors";
+import {getSalary} from "salary/ducks/salary/selectors";
 
 import './style.less'
 
 export const Modal = () => {
     const dispatch = useDispatch();
-    const {fromDate, toDate} = getTableDate;
-    const tableData = getTableData;
-    const salaryData = getSalaryData;
-    const date = getDate;
+    const {fromDate, toDate} = getTableDate();
+    const tableData = getTableData();
+    const salaryData = getSalary();
+    const date = getDate();
     const {month, year} = date;
 
     const saveDataToTxt = () => {

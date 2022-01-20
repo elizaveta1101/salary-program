@@ -7,13 +7,13 @@
     "module": "es2020",
     "moduleResolution": "node",
     "jsx": "react",
-    "baseUrl": ".",
+    "baseUrl": "./src/",
     "lib": ["es2020", "dom", "esnext"],
     "paths": {
-      "src": ["src/*"]
+      "salary": ["src/Salary"]
     },
     "resolveJsonModule": true,
-    "typeRoots": ["./src/types", "./node_modules/@types"],
+    "typeRoots": ["./node_modules/@types"],
     "skipLibCheck": true,
     "allowJs": true,
     "noEmit": true

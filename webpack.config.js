@@ -46,12 +46,12 @@ const cssLoaders = (extra) => {
 const babelOptions = preset => {
     const opts = {
         presets: [
-            '@babel/preset-env'
+            '@babel/env'
         ]
     }
-    
+
     if (preset) opts.presets.push(preset)
-    
+
     return opts
 }
 
@@ -72,10 +72,10 @@ const plugins = () => {
                 collapseWhitespace: isProd
             }
         }),
-        new CleanWebpackPlugin(), 
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
             filename: filename('css')
-        })
+        }),
     ]
 
     if (isProd) {
@@ -83,12 +83,13 @@ const plugins = () => {
     }
     return base
 }
-
+console.log(__dirname);
+console.log(path.resolve(__dirname, 'src'));
 module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: 'development',
     entry: {
-        main: ['@babel/polyfill','@/index.js']
+        main: ['@babel/polyfill', path.resolve(__dirname,'./src/index.tsx')]
     },
     output: {
         filename: filename('js'),
@@ -97,7 +98,8 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.ts', '.tsx', '.json', '.png'],
         alias: {
-            '@': path.resolve(__dirname, 'src'),
+            'salary': path.resolve(__dirname, 'src/salary'),
+
         }
     },
     optimization: optimization(),
@@ -107,10 +109,13 @@ module.exports = {
     },
     devtool: isDev ? 'source-map' : false,
     plugins: plugins(),
+    // externals: {
+    //     react: 'React'
+    // },
     module: {
         rules: [
             {
-                test: /\.css$/, 
+                test: /\.css$/,
                 use: cssLoaders()
             },
             {
@@ -119,20 +124,34 @@ module.exports = {
             },
             {
                 test: /\.s[ac]ss$/,
-                use:  cssLoaders('sass-loader')
+                use: cssLoaders('sass-loader')
             },
             {
                 test: /\.(png|jpg|svg|gif|ttf|woff|woff2|eot)$/,
                 use: ['file-loader']
             },
             {
-                test: /\.(js|jsx|ts|tsx)$/,
+                test: /\.tsx?$/,
                 exclude: /node_modules/,
-                use: {
-                    loader: 'babel-loader',
-                    options: babelOptions('@babel/preset-react') 
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        "@babel/preset-typescript",
+                        ["@babel/preset-react", {"runtime": "automatic"}]
+                    ]
                 }
-            }, 
-        ]
-    }
+            },
+            {
+                test: /\.(js|jsx)$/,
+                exclude: /node_modules/,
+                loader: 'babel-loader',
+                options: {
+                    presets: [
+                        ['@babel/preset-env', {targets: "defaults"}],
+                        ["@babel/preset-react", {"runtime": "automatic"}]
+                    ],
+                }
+            },
+        ],
+    },
 }

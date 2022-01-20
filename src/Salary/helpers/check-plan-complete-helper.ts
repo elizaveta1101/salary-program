@@ -1,12 +1,8 @@
 import {CONSTANTS} from '../constants'
 
 export const checkPlanCompleteHelper = (plan: number, weekend: boolean): boolean => {
-    const { PLAN, WEEKEND_PLAN } = CONSTANTS;
+    const {PLAN, WEEKEND_PLAN} = CONSTANTS;
     if (weekend && plan >= WEEKEND_PLAN) {
         return true;
-    } else if (!weekend && plan >= PLAN) {
-        return true;
-    } else {
-        return false;
-    }
+    } else return (!weekend && plan >= PLAN);
 }

@@ -1,26 +1,23 @@
-import {memo} from 'react';
-import {Provider} from 'react-redux';
-import { Modal } from './Salary/components/Modal';
-import { SalaryCalculation } from './Salary/components/SalaryCalculation';
-import { SalaryTable } from './Salary/components/SalaryTable';
-import { TableCreator } from './Salary/components/TableCreator';
+import React from 'react';
 
-import {store, TRootState} from "./Salary/ducks/store";
-import {useSelector} from "./Salary/ducks/useSelector";
+import {TableCreator} from "salary/components/TableCreator";
+import {SalaryTable} from "salary/components/SalaryTable";
+import {SalaryCalculation} from "salary/components/SalaryCalculation";
+import {Modal} from "salary/components/Modal";
+import {getModalVisibility} from "salary/ducks/modal/selectors";
 
 
-export const App = memo(() => {
-    const visible = useSelector((state) => state.modal.visibility);
+
+export const App: React.FC = () => {
+    const visible = getModalVisibility();
     return (
-        <Provider store={store}>
-            <div className='container'>
-                <TableCreator />
-                <SalaryTable />
-                <SalaryCalculation />
-                {visible && <Modal />}
-            </div>
-        </Provider>
+        <div className='container'>
+            <TableCreator/>
+            <SalaryTable/>
+            <SalaryCalculation/>
+            {visible && <Modal/>}
+        </div>
     );
-});
+};
 
 export default App;
