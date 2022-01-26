@@ -98,7 +98,7 @@ module.exports = {
     resolve: {
         extensions: ['.js', '.ts', '.tsx', '.json', '.png'],
         alias: {
-            'salary': path.resolve(__dirname, 'src/salary'),
+            'src': path.resolve(__dirname, 'src'),
 
         }
     },

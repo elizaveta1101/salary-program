@@ -10,7 +10,7 @@
     "baseUrl": "./src/",
     "lib": ["es2020", "dom", "esnext"],
     "paths": {
-      "salary": ["src/Salary"]
+      "src": ["src"]
     },
     "resolveJsonModule": true,
     "typeRoots": ["./node_modules/@types"],
