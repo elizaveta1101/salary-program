@@ -4,7 +4,7 @@ import {getTableDate} from "../selectors";
 import {TableHeader} from './TableHeader'
 import {TableRow} from './TableRow'
 
-import './style.less'
+// import './style.less'
 
 export const SalaryTable: React.FC = () => {
     

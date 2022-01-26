@@ -2,21 +2,21 @@
  * Combine all reducers in this file and export the combined reducers.
  */
 
-import { combineReducers } from '@reduxjs/toolkit';
-import type { Reducer } from '@reduxjs/toolkit';
+import { combineReducers } from "@reduxjs/toolkit";
+import type { Reducer } from "@reduxjs/toolkit";
 
-// import { reducer as someReducer, sliceKey as someKey } from 'store/something/slice';
-import type { InjectedReducersType } from 'utils/injector-typings';
+import { reducer as pageReducer, sliceKey as pageKey } from "./pageStore/slice";
+
+import type { InjectedReducersType } from "utils/injector-typings";
 
 // [IMPORT NEW SLICEREDUCER ABOVE] < Needed for generating slices seamlessly
 
 const storeReducers = {
-  // [someKey]: someReducer,
-  // [INSERT NEW STORE REDUCER ABOVE] < Needed for generating slices seamlessly
+  [pageKey]: pageReducer,
 };
 
 // eslint-disable-next-line @typescript-eslint/no-unsafe-return
-const defaultReducer: Reducer = state => state;
+const defaultReducer: Reducer = (state) => state;
 
 /**
  * Merges the main reducer with the router state and dynamically injected reducers
